@@ -1,0 +1,110 @@
+// popup/config.html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    .engine-checkbox {
+      margin-bottom: 5px;
+    }
+    button {
+      background-color: #0060df;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 5px;
+    }
+    button:hover {
+      background-color: #003eaa;
+    }
+    .add-button {
+      background-color: #30b046;
+    }
+    .add-button:hover {
+      background-color: #208032;
+    }
+    .keyword-list {
+      border: 1px solid #ccc;
+      padding: 5px;
+      max-height: 100px;
+      overflow-y: auto;
+      margin-bottom: 5px;
+    }
+    .keyword-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 2px 0;
+    }
+    .remove-keyword {
+      color: red;
+      cursor: pointer;
+    }
+    h3 {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Configuration de Navigation</h2>
+  
+  <div class="form-group">
+    <h3>Moteurs de recherche</h3>
+    <p>Sélectionnez les moteurs à utiliser aléatoirement :</p>
+    <div id="searchEnginesContainer">
+      <!-- Les cases à cocher des moteurs seront ajoutées ici par JavaScript -->
+    </div>
+    
+    <div class="engine-checkbox">
+      <input type="text" id="customSearchEngine" placeholder="https://nouveaumoteur.com">
+      <button id="addSearchEngine" class="add-button">Ajouter un moteur</button>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <h3>Site à rechercher</h3>
+    <input type="text" id="targetSite" placeholder="example.com">
+  </div>
+  
+  <div class="form-group">
+    <h3>Mots-clés</h3>
+    <p>Ajoutez des mots-clés qui seront utilisés aléatoirement :</p>
+    <div id="keywordList" class="keyword-list">
+      <!-- Les mots-clés seront ajoutés ici par JavaScript -->
+    </div>
+    <div>
+      <input type="text" id="newKeyword" placeholder="Nouveau mot-clé">
+      <button id="addKeyword" class="add-button">Ajouter un mot-clé</button>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <button id="startNavigation">Lancer la navigation</button>
+    <button id="saveConfig">Enregistrer la configuration</button>
+  </div>
+  
+  <script src="config.js"></script>
+</body>
+</html>
