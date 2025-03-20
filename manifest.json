@@ -1,0 +1,35 @@
+// manifest.json
+{
+  "manifest_version": 2,
+  "name": "Navigation Automatisée Aléatoire",
+  "version": "1.0",
+  "description": "Extension qui automatise la navigation aléatoire sur le web",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "webNavigation",
+    "storage",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.com/*", "*://*.google.fr/*", "*://*.bing.com/*", "*://search.yahoo.com/*", "*://duckduckgo.com/*"],
+      "js": ["content-scripts/navigation.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    },
+    "default_title": "Navigation Automatisée Aléatoire",
+    "default_popup": "popup/config.html"
+  }
+}
